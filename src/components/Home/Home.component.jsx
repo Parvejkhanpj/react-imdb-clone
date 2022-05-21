@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { API_URL, API_KEY, IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '../../config';
+import React, { Component } from 'react';                                                       //import react and component
+import { API_URL, API_KEY, IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '../../config';   //import api
 import HeroImage from '../elements/HeroImage/HeroImage.component';
 import SearchBar from '../elements/SearchBar/SearchBar.component';
 import FourColGrid from '../elements/FourColGrid/FourColGrid.component';
@@ -18,9 +18,9 @@ class Home extends Component {
     searchTerm: ''
   }
 
-  componentDidMount() {
-    if (sessionStorage.getItem('HomeState')) {
-      let state = JSON.parse(sessionStorage.getItem('HomeState'))
+  componentDidMount() {  
+    if (sessionStorage.getItem('HomeState')) {                                    //session/data clear when window close so we use sessionstorage
+      let state = JSON.parse(sessionStorage.getItem('HomeState'))                  //that covver json file in array and object
       this.setState({ ...state })
     } else {
       this.setState({ loading: true })
